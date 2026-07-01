@@ -1,0 +1,44 @@
+name: Validate Deployment
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install SFDX CLI
+      run: |
+        wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
+        mkdir ~/sfdx
+        tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
+        echo "$HOME/sfdx/bin" >> $GITHUB_PATH
+        ~/sfdx/bin/sfdx version
+
+    - name: Validate Package Structure
+      run: |
+        echo "Validating package structure..."
+        test -f "sfdx-project.json" || { echo "sfdx-project.json not found"; exit 1; }
+        test -f "manifest/package.xml" || { echo "manifest/package.xml not found"; exit 1; }
+        test -d "force-app/main/default/lwc/dataCloudMultiColumnCard" || { echo "dataCloudMultiColumnCard not found"; exit 1; }
+        test -d "force-app/main/default/lwc/dataCloudRelatedField" || { echo "dataCloudRelatedField not found"; exit 1; }
+        test -f "force-app/main/default/classes/DataCloudRelatedFieldController.cls" || { echo "DataCloudRelatedFieldController.cls not found"; exit 1; }
+        test -f "force-app/main/default/classes/DataCloudRelatedFieldControllerTest.cls" || { echo "DataCloudRelatedFieldControllerTest.cls not found"; exit 1; }
+        echo "Package structure is valid"
+
+    - name: Count Components
+      run: |
+        echo "Component Summary:"
+        echo "  LWC Components: $(find force-app/main/default/lwc -type d -mindepth 1 -maxdepth 1 | wc -l)"
+        echo "  Apex Classes: $(find force-app/main/default/classes -name "*.cls" | wc -l)"
+        echo "  Total Files: $(find force-app -type f | wc -l)"
+
+    - name: Validation Complete
+      run: echo "All validation checks passed! Package is ready for deployment"

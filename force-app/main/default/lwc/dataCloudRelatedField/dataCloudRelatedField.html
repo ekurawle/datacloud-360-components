@@ -1,0 +1,36 @@
+<template>
+    <template if:false={shouldCompletelyHide}>
+        <div class="slds-form-element slds-form-element_stacked slds-hint-parent">
+            <span class="slds-form-element__label slds-text-body_small slds-text-color_weak">{fieldLabel}</span>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__static">
+
+                    <template if:true={isInvalid}>
+                        <span class="slds-text-color_weak slds-text-body_small">{noDataMessage}</span>
+                    </template>
+
+                    <template if:false={isInvalid}>
+                        <template if:true={isLoading}>
+                            <lightning-spinner alternative-text="Loading" size="xx-small"></lightning-spinner>
+                        </template>
+
+                        <template if:true={hasRecords}>
+                            <a href={recordUrl} target="_blank" class="slds-text-link">{recordName}</a>
+                        </template>
+
+                        <template if:false={hasRecords}>
+                            <template if:false={isLoading}>
+                                <span class="slds-text-color_weak slds-text-body_small">No records found.</span>
+                            </template>
+                        </template>
+
+                        <template if:true={error}>
+                            <span class="slds-text-color_error slds-text-body_small">{error}</span>
+                        </template>
+                    </template>
+
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

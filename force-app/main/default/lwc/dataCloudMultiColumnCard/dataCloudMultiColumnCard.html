@@ -1,0 +1,92 @@
+<template>
+     <div class="slds-page-header slds-m-top_medium slds-p-vertical_small">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media slds-media_center slds-has-flexi-truncate">
+
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:data_mapping" size="medium"></lightning-icon>
+                    </div>
+
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Data 360">Data 360</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap slds-page-header__detail-row slds-m-top_small slds-p-bottom_small">
+            <div class="slds-col slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                <c-data-cloud-related-field
+                    record-id={recordId}
+                    object-api-name={objectApiName}
+                    field-label={col1_Label}
+                    dmo-name={col1_dmoName}
+                    dmo-search-field={col1_dmoSearchField}
+                    dmo-display-field={col1_dmoDisplayField}
+                    sobject-search-field={col1_sobjectSearchField}
+                    display-field={col1_displayField}
+                    invalid-values={col1_invalidValues}
+                    no-data-message={col1_noDataMessage}
+                    hide-when-invalid={col1_hideWhenInvalid}>
+                </c-data-cloud-related-field>
+            </div>
+            <template if:true={col2_dmoName}>
+                <template if:true={col2Visible}>
+                    <div class="slds-col slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <c-data-cloud-related-field
+                            data-col="2"
+                            onstatuschange={handleColStatus}
+                            record-id={recordId}
+                            object-api-name={objectApiName}
+                            field-label={col2_Label}
+                            dmo-name={col2_dmoName}
+                            dmo-search-field={col2_dmoSearchField}
+                            dmo-display-field={col2_dmoDisplayField}
+                            sobject-search-field={col2_sobjectSearchField}
+                            display-field={col2_displayField}
+                            invalid-values={col2_invalidValues}
+                            no-data-message={col2_noDataMessage}
+                            hide-when-invalid={col2_hideWhenInvalid}>
+                        </c-data-cloud-related-field>
+                    </div>
+                </template>
+            </template>
+
+            <template if:true={col3_dmoName}>
+                <template if:true={col3Visible}>
+                    <div class="slds-col slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <c-data-cloud-related-field
+                            data-col="3"
+                            onstatuschange={handleColStatus}
+                            record-id={recordId}
+                            object-api-name={objectApiName}
+                            field-label={col3_Label}
+                            dmo-name={col3_dmoName}
+                            dmo-search-field={col3_dmoSearchField}
+                            dmo-display-field={col3_dmoDisplayField}
+                            sobject-search-field={col3_sobjectSearchField}
+                            display-field={col3_displayField}
+                            invalid-values={col3_invalidValues}
+                            no-data-message={col3_noDataMessage}
+                            hide-when-invalid={col3_hideWhenInvalid}
+                            use-cdp-page-for-parent-account={useCdpPageForParentAccount}>
+                        </c-data-cloud-related-field>
+                    </div>
+                </template>
+            </template>
+
+
+        </div>
+
+       <!-- <div class="slds-border_top slds-m-top_small"></div>-->
+
+    </div>
+</template>

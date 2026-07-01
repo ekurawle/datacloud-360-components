@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Data Cloud Multi-Column Card</masterLabel>
+    <description>A 3-column card for Data Cloud links, fully configurable.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="col1_Label" type="String" label="Col 1 - Label" default="Drug" />
+            <property name="col1_dmoName" type="String" label="Col 1 - DMO Name" default="Drug_Data_Unified__dlm" />
+            <property name="col1_dmoSearchField" type="String" label="Col 1 - DMO Search Field" default="CRG_Drug_Id_Text__c" />
+            <property name="col1_dmoDisplayField" type="String" label="Col 1 - DMO Display Field" default="Drug_Name__c" />
+            <property name="col1_sobjectSearchField" type="String" label="Col 1 - SObject Search Field" default="GlobalData_Drug__r.DrugID_Text__c" />
+            <property name="col1_displayField" type="String" label="Col 1 - SObject Display Field" default="Drug_Brand_Name__c" />
+            <property name="col1_invalidValues" type="String" label="Col 1 - Invalid Values" default="Drug not found,Invalid Drug" />
+            <property name="col1_noDataMessage" type="String" label="Col 1 - No Data Message" default="No drug assigned." />
+            <property name="col1_hideWhenInvalid" type="Boolean" label="Col 1 - Hide Entirely if Blank" default="false" />
+
+            <property name="col2_Label" type="String" label="Col 2 - Label" default="Bundle" />
+            <property name="col2_dmoName" type="String" label="Col 2 - DMO Name" />
+            <property name="col2_dmoSearchField" type="String" label="Col 2 - DMO Search Field" />
+            <property name="col2_dmoDisplayField" type="String" label="Col 2 - DMO Display Field" />
+            <property name="col2_sobjectSearchField" type="String" label="Col 2 - SObject Search Field" />
+            <property name="col2_displayField" type="String" label="Col 2 - SObject Display Field" />
+            <property name="col2_invalidValues" type="String" label="Col 2 - Invalid Values" />
+            <property name="col2_noDataMessage" type="String" label="Col 2 - No Data Message" />
+            <property name="col2_hideWhenInvalid" type="Boolean" label="Col 2 - Hide Entirely if Blank" default="true" />
+
+            <property name="col3_Label" type="String" label="Col 3 - Label" default="Parent Account" />
+            <property name="col3_dmoName" type="String" label="Col 3 - DMO Name" />
+            <property name="col3_dmoSearchField" type="String" label="Col 3 - DMO Search Field" />
+            <property name="col3_dmoDisplayField" type="String" label="Col 3 - DMO Display Field" />
+            <property name="col3_sobjectSearchField" type="String" label="Col 3 - SObject Search Field" />
+            <property name="col3_displayField" type="String" label="Col 3 - SObject Display Field" />
+            <property name="col3_invalidValues" type="String" label="Col 3 - Invalid Values" />
+            <property name="col3_noDataMessage" type="String" label="Col 3 - No Data Message" />
+            <property name="col3_hideWhenInvalid" type="Boolean" label="Col 3 - Hide Entirely if Blank" default="true" />
+            <property name="useCdpPageForParentAccount" type="Boolean" label="Use CDP Page for Parent Account" default="true" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

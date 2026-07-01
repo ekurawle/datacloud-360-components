@@ -1,0 +1,39 @@
+# Salesforce DX
+.sfdx/
+.localdevserver/
+.sf/
+.vscode/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.zip
+
+# IDE
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Salesforce cache
+**/.localdevserver
+
+# Scratch org info
+config/project-scratch-def.json.bak
+
+# Apex debug logs
+**/debug-logs/
+
+# Test results
+test-results/
+coverage/
