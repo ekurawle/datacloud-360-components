@@ -1,6 +1,7 @@
 # ☁️ Data Cloud 360 Components
 
-> A powerful Lightning Web Component package for displaying Salesforce Data Cloud (CDP) records in a beautiful, configurable multi-column card layout.
+> **Display Data Cloud (DMO) records as lookup fields on Salesforce record pages**  
+> Surface unified data from Data Cloud directly on your CRM records with clickable links to DMO record pages.
 
 [![Salesforce API](https://img.shields.io/badge/Salesforce%20API-v66.0-blue.svg)](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -8,27 +9,51 @@
 
 ---
 
+## 🎯 What Problem Does This Solve?
+
+When you have **CRM records with lookups to Data Cloud objects (DMOs)**, you typically only see the field value as text. This component transforms those text fields into **clickable links** that navigate directly to the Data Cloud record page, displayed as an elegant **highlight panel** on your record page.
+
+### Real-World Example: Cross-Org Visibility
+
+**Scenario**: Your Opportunity record has lookup fields to:
+- **Unified Drug Record** (DMO) - `Drug_Data_Unified__dlm`
+- **Unified Bundle** (DMO) - `Bundle_Data_Unified__dlm`  
+- **Unified Account** (DMO) - `UnifiedssotAccountAcct__dlm`
+
+**Without this component**: You see text values, no easy way to navigate to Data Cloud records.
+
+**With this component**: You get a beautiful 3-column card showing clickable links to all related DMO records, enabling cross-business unit visibility and faster navigation.
+
+---
+
 ## 📸 Preview
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  🗺️  Data 360                                                │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Drug              Bundle              Parent Account       │
-│  ─────────         ─────────          ─────────            │
-│  🔗 Aspirin        🔗 Pain Relief     🔗 Acme Corp         │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│  🗺️  Data 360 - Cross Sell Attributes                         │
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│  Drug                Bundle              Parent Account        │
+│  ──────────          ─────────           ─────────            │
+│  🔗 Sodium Iodide    🔗 01188            🔗 Faraday Pharma    │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
 ```
 
-**Features:**
-- ✅ Up to 3 configurable columns
-- ✅ Dynamic show/hide based on data validity
-- ✅ Clickable links to Data Cloud records
-- ✅ Loading states & error handling
-- ✅ Mobile responsive
-- ✅ No-code configuration in App Builder
+**Displayed as a Highlight Panel on Opportunity/Account Records**
+
+---
+
+## ✨ Key Features
+
+- ✅ **Displays DMO lookup fields as clickable links** to Data Cloud record pages
+- ✅ **Highlight panel design** - Matches Salesforce Lightning UI patterns
+- ✅ **Up to 3 configurable columns** - Show multiple related DMO records
+- ✅ **Automatic navigation** - Direct links to `/lightning/cdp/` or `/lightning/r/` pages
+- ✅ **Dynamic show/hide** - Columns auto-hide when data is missing or invalid
+- ✅ **No-code configuration** - Fully configurable in Lightning App Builder
+- ✅ **Mobile responsive** - Works on desktop and mobile
+- ✅ **Loading states & error handling** - Professional UX throughout
 
 ---
 
@@ -79,22 +104,119 @@ sfdx force:source:deploy -x manifest/package.xml -u MyOrg
 
 ## 📦 What's Included
 
-| Component | Type | Description |
-|-----------|------|-------------|
-| **dataCloudMultiColumnCard** | LWC | Main component (drag-and-drop in App Builder) |
-| **dataCloudRelatedField** | LWC | Child component (renders each column) |
-| **DataCloudRelatedFieldController** | Apex | Server-side controller for querying Data Cloud |
-| **DataCloudRelatedFieldControllerTest** | Apex | Test class with full coverage |
+| Component | Type | Purpose |
+|-----------|------|---------|
+| **dataCloudMultiColumnCard** | LWC | Main container component - Drag onto record pages in App Builder. Creates the highlight panel and manages up to 3 columns. |
+| **dataCloudRelatedField** | LWC | Individual column component - Renders each DMO lookup field as a clickable link. Handles loading, errors, and navigation. |
+| **DataCloudRelatedFieldController** | Apex | Server-side controller - Dynamically queries Data Cloud objects (DMOs) using SOQL with security enforced. |
+| **DataCloudRelatedFieldControllerTest** | Apex | Test class - Provides 90%+ code coverage with comprehensive test scenarios. |
+
+**Total Package Size**: 25 files, ~3,000 lines (including documentation)
 
 ---
 
-## 🎯 Use Cases
+## 🎯 Real-World Use Cases
 
-- **Healthcare**: Display Patient → Provider → Facility relationships
-- **Pharma**: Show Drug → Bundle → Parent Account links
-- **Retail**: Display Product → Category → Manufacturer data
-- **Financial Services**: Show Account → Household → Portfolio
-- **Any Industry**: Generic Data Cloud object relationships
+### 1. **Pharma: Cross-Business Unit Visibility**
+**Problem**: Sales reps in Clinical Research Group (CRG) couldn't see Product Supply Group (PSG) data.  
+**Solution**: Embed this component on Opportunity records to surface:
+- **Drug** (from Data Cloud) - Shows unified drug data across business units
+- **Bundle** - Product bundle information
+- **Parent Account** - Consolidated account view
+
+**Result**: Reps gain 360° visibility without leaving their org, enabling cross-sell opportunities.
+
+---
+
+### 2. **Healthcare: Patient Care Coordination**
+Display on Patient records:
+- **Unified Patient Profile** (DMO)
+- **Primary Care Provider** (DMO)
+- **Facility/Hospital** (DMO)
+
+**Result**: Care coordinators see complete patient context with one click.
+
+---
+
+### 3. **Life Sciences: Clinical Trial Management**
+Display on Clinical Study records:
+- **Study Protocol** (DMO)
+- **Investigational Product** (DMO)
+- **Sponsor Organization** (DMO)
+
+**Result**: Research coordinators access study data faster.
+
+---
+
+### 4. **Financial Services: Household Management**
+Display on Account records:
+- **Household Profile** (DMO)
+- **Primary Contact** (DMO)
+- **Investment Portfolio** (DMO)
+
+**Result**: Advisors get unified household view.
+
+---
+
+### 5. **Retail: Product Catalog Integration**
+Display on Order records:
+- **Product** (DMO)
+- **Category** (DMO)
+- **Manufacturer/Supplier** (DMO)
+
+**Result**: Order management team sees complete product lineage.
+
+---
+
+## 🔍 How It Works
+
+This component bridges the gap between your **CRM records** and **Data Cloud (DMO) records**.
+
+### The Flow:
+
+1. **Your Opportunity/Account Record** has lookup fields to Data Cloud objects:
+   ```
+   Opportunity.GlobalData_Drug__r.DrugID_Text__c = "12345"
+   Opportunity.Drug_Brand_Name__c = "Sodium Iodide"
+   ```
+
+2. **Component queries Data Cloud** using the lookup field value:
+   ```sql
+   SELECT Id, Drug_Name__c 
+   FROM Drug_Data_Unified__dlm 
+   WHERE CRG_Drug_Id_Text__c = '12345'
+   ```
+
+3. **Displays as clickable link**:
+   ```
+   Drug
+   🔗 Sodium Iodide  ← Click navigates to /lightning/r/Drug_Data_Unified__dlm/[RecordId]/view
+   ```
+
+### Architecture:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                   Opportunity Record                         │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Data 360 - Cross Sell Attributes                      │ │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────────────┐    │ │
+│  │  │   Drug   │  │  Bundle  │  │  Parent Account  │    │ │
+│  │  │ ───────  │  │ ──────── │  │ ──────────────── │    │ │
+│  │  │🔗 Sodium │  │🔗 01188  │  │🔗 Faraday Pharma │    │ │
+│  │  │  Iodide  │  │          │  │                  │    │ │
+│  │  └──────────┘  └──────────┘  └──────────────────┘    │ │
+│  │         ↓              ↓              ↓               │ │
+│  │    DMO Link       DMO Link       DMO Link             │ │
+│  └────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+```
+
+Each column:
+1. Reads the CRM field value
+2. Queries the corresponding DMO
+3. Displays a clickable link to the DMO record page
 
 ---
 
