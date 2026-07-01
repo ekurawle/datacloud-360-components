@@ -74,11 +74,11 @@ git push -u origin main
 
 ### Step 4: Connect Local Repository to GitHub
 
-Copy the commands from your new GitHub repository page or use these (replace `YOUR_USERNAME`):
+Copy the commands from your new GitHub repository page or use these (replace `ekurawle`):
 
 ```bash
 # Add remote origin
-git remote add origin https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote add origin https://github.com/ekurawle/datacloud-360-components.git
 
 # Verify remote
 git remote -v
@@ -93,7 +93,7 @@ git push -u origin main
 Enumerating objects: XX, done.
 Counting objects: 100% (XX/XX), done.
 ...
-To https://github.com/YOUR_USERNAME/datacloud-360-components.git
+To https://github.com/ekurawle/datacloud-360-components.git
  * [new branch]      main -> main
 Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
@@ -105,16 +105,16 @@ After pushing, update these references in your GitHub repository:
 1. Go to your repository on GitHub
 2. Click on `README.md`
 3. Click the pencil icon to edit
-4. Replace all instances of `YOUR_USERNAME` with your actual GitHub username
+4. Replace all instances of `ekurawle` with your actual GitHub username
 5. Commit changes
 
 **Or update locally and push again:**
 
 ```bash
-# Replace YOUR_USERNAME in README.md
-sed -i '' 's/YOUR_USERNAME/your-actual-username/g' README.md
-sed -i '' 's/YOUR_USERNAME/your-actual-username/g' CHANGELOG.md
-sed -i '' 's/YOUR_USERNAME/your-actual-username/g' CONTRIBUTING.md
+# Replace ekurawle in README.md
+sed -i '' 's/ekurawle/your-actual-username/g' README.md
+sed -i '' 's/ekurawle/your-actual-username/g' CHANGELOG.md
+sed -i '' 's/ekurawle/your-actual-username/g' CONTRIBUTING.md
 
 # Commit and push
 git add README.md CHANGELOG.md CONTRIBUTING.md
@@ -174,7 +174,7 @@ Add a "Deploy to Salesforce" button by adding this to your README (already inclu
 Users can simply:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git clone https://github.com/ekurawle/datacloud-360-components.git
 cd datacloud-360-components
 ./install.sh
 ```
@@ -342,7 +342,7 @@ After setup, verify:
 ```bash
 # Use personal access token or SSH key
 # Generate token: GitHub Settings > Developer settings > Personal access tokens
-git remote set-url origin https://YOUR_USERNAME:YOUR_TOKEN@github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote set-url origin https://ekurawle:YOUR_TOKEN@github.com/ekurawle/datacloud-360-components.git
 ```
 
 ### "Repository not found"
@@ -352,7 +352,7 @@ git remote set-url origin https://YOUR_USERNAME:YOUR_TOKEN@github.com/YOUR_USERN
 git remote -v
 
 # Update if needed
-git remote set-url origin https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote set-url origin https://github.com/ekurawle/datacloud-360-components.git
 ```
 
 ### Files not showing on GitHub
@@ -379,7 +379,7 @@ Your package is now on GitHub and ready for others to use!
 
 **Your Repository URL:**
 ```
-https://github.com/YOUR_USERNAME/datacloud-360-components
+https://github.com/ekurawle/datacloud-360-components
 ```
 
 ---

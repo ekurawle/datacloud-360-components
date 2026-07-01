@@ -23,7 +23,7 @@ This project follows the Salesforce Developer Community guidelines. Be respectfu
 
 ### Reporting Bugs
 
-1. Check if the bug has already been reported in [Issues](https://github.com/YOUR_USERNAME/datacloud-360-components/issues)
+1. Check if the bug has already been reported in [Issues](https://github.com/ekurawle/datacloud-360-components/issues)
 2. If not, create a new issue with:
    - Clear title and description
    - Steps to reproduce
@@ -63,7 +63,7 @@ We welcome:
 # 1. Fork the repository on GitHub
 
 # 2. Clone your fork
-git clone https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git clone https://github.com/ekurawle/datacloud-360-components.git
 cd datacloud-360-components
 
 # 3. Create a feature branch
@@ -368,7 +368,7 @@ Contributors will be recognized in:
 
 ## ❓ Questions?
 
-- Open a [Discussion](https://github.com/YOUR_USERNAME/datacloud-360-components/discussions)
+- Open a [Discussion](https://github.com/ekurawle/datacloud-360-components/discussions)
 - Ask in [Salesforce Stack Exchange](https://salesforce.stackexchange.com/)
 - Reach out in [Trailblazer Community](https://trailblazers.salesforce.com/)
 

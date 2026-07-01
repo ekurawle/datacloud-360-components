@@ -158,10 +158,10 @@ This package is based on components originally developed for pharmaceutical indu
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/datacloud-360-components/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/datacloud-360-components/discussions)
+- **Issues**: [GitHub Issues](https://github.com/ekurawle/datacloud-360-components/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ekurawle/datacloud-360-components/discussions)
 - **Community**: [Salesforce Stack Exchange](https://salesforce.stackexchange.com/)
 
 ---
 
-**Note**: Replace `YOUR_USERNAME` in URLs with your actual GitHub username after repository creation.
+**Note**: Replace `ekurawle` in URLs with your actual GitHub username after repository creation.

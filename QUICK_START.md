@@ -14,13 +14,13 @@
 
 ### Step 2️⃣: Push Your Code
 
-Copy/paste these commands (replace `YOUR_USERNAME` with your GitHub username):
+Copy/paste these commands (replace `ekurawle` with your GitHub username):
 
 ```bash
 cd /Users/ekurawle/Documents/VSCode/Thermo/Thermo/package-datacloud360
 
 # Connect to your new GitHub repo
-git remote add origin https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote add origin https://github.com/ekurawle/datacloud-360-components.git
 
 # Push your code
 git push -u origin main
@@ -43,13 +43,13 @@ On GitHub, click your repository, then:
 
 ### Step 4️⃣: Update README
 
-Replace `YOUR_USERNAME` with your actual GitHub username:
+Replace `ekurawle` with your actual GitHub username:
 
 ```bash
 # Update all references
-sed -i '' 's/YOUR_USERNAME/your-actual-username/g' README.md
-sed -i '' 's/YOUR_USERNAME/your-actual-username/g' CHANGELOG.md
-sed -i '' 's/YOUR_USERNAME/your-actual-username/g' CONTRIBUTING.md
+sed -i '' 's/ekurawle/your-actual-username/g' README.md
+sed -i '' 's/ekurawle/your-actual-username/g' CHANGELOG.md
+sed -i '' 's/ekurawle/your-actual-username/g' CONTRIBUTING.md
 
 # Push updates
 git add .
@@ -64,7 +64,7 @@ git push
 ### Option 1: One-Command Install (Easiest!)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git clone https://github.com/ekurawle/datacloud-360-components.git
 cd datacloud-360-components
 ./install.sh
 ```
@@ -74,7 +74,7 @@ The install script handles everything automatically!
 ### Option 2: Manual SFDX Deploy
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git clone https://github.com/ekurawle/datacloud-360-components.git
 cd datacloud-360-components
 sfdx auth:web:login -a MyOrg
 sfdx force:source:deploy -p force-app -u MyOrg
@@ -140,7 +140,7 @@ Use a Personal Access Token:
 3. Use token instead of password:
 
 ```bash
-git remote set-url origin https://YOUR_USERNAME:YOUR_TOKEN@github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote set-url origin https://ekurawle:YOUR_TOKEN@github.com/ekurawle/datacloud-360-components.git
 git push -u origin main
 ```
 
@@ -150,7 +150,7 @@ Double-check you created the repo on GitHub first, then verify the URL:
 
 ```bash
 git remote -v
-# Should show: origin  https://github.com/YOUR_USERNAME/datacloud-360-components.git
+# Should show: origin  https://github.com/ekurawle/datacloud-360-components.git
 ```
 
 ---
@@ -184,7 +184,7 @@ git log --oneline
 git status
 
 # Add remote (do this once)
-git remote add origin https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote add origin https://github.com/ekurawle/datacloud-360-components.git
 
 # Push to GitHub
 git push -u origin main
@@ -234,7 +234,7 @@ Share your package:
 Just create your GitHub repo and push. You're literally 2 commands away from publishing!
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git remote add origin https://github.com/ekurawle/datacloud-360-components.git
 git push -u origin main
 ```
 

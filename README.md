@@ -38,7 +38,7 @@
 
 ```bash
 # Clone this repository
-git clone https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git clone https://github.com/ekurawle/datacloud-360-components.git
 cd datacloud-360-components
 
 # Authenticate to your Salesforce org
@@ -61,7 +61,7 @@ sfdx force:apex:test:run -n DataCloudRelatedFieldControllerTest -u MyOrg
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/datacloud-360-components.git
+git clone https://github.com/ekurawle/datacloud-360-components.git
 cd datacloud-360-components
 
 # Deploy using manifest
@@ -256,7 +256,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 📧 Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/datacloud-360-components/issues)
+- **Issues**: [GitHub Issues](https://github.com/ekurawle/datacloud-360-components/issues)
 - **Questions**: [Salesforce Stack Exchange](https://salesforce.stackexchange.com/)
 - **Discussions**: [Trailblazer Community](https://trailblazers.salesforce.com/)
 
